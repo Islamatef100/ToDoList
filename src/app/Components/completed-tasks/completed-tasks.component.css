@@ -1,0 +1,69 @@
+  /* Table Styling */
+.table {
+  border-collapse: collapse; /* Removes double borders */
+  border-radius: 10px;
+  overflow: hidden; /* Prevents border radius from being cut off */
+}
+
+/* Header Styling */
+.table thead {
+  background: #343a40; /* Dark background for header */
+  color: white;
+}
+
+.table thead th {
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Row Styling */
+.table tbody tr {
+  border-bottom: 1px solid #ddd; /* Light gray border between rows */
+}
+
+.table tbody tr:hover {
+  background: #f1f1f1; /* Light gray hover effect */
+}
+
+/* Cell Padding */
+.table td {
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Button Styling */
+.btn-outline-primary {
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.btn-outline-danger {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+/* Checkbox Alignment */
+.mat-checkbox {
+  display: flex;
+  justify-content: center;
+}
+
+/* Icons */
+.ico {
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.ico:hover {
+  color: #ffc107; /* Yellow on hover */
+}
+.showIco{
+border-right: 1px solid blue;
+padding-right: 10px;
+}
+.dowenloadIco{
+  padding-left: 10px;
+}

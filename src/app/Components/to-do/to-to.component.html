@@ -1,0 +1,42 @@
+<div>
+    <h1 class="text-center text-primary mt-3">{{title}}</h1>
+    <img height="300" width="300" class="mx-auto img-fluid d-block mb-3" [src]="imageUrl" >
+</div>
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-10">
+                 <app-add-task [newTaskTitle]="newtask" [operationName]="operationName" [editedId]="editedId" (AddOrEditeTaskEvent)="getAllTasks()" />
+        </div>
+    </div>
+   <div class="row d-flex justify-content-center" *ngIf="AllTasks.length">
+    <div class="col-sm-11">
+        <table class="table table-striped">
+            <thead class="col-sm-12 table-dark">
+                <tr>
+                    <th class="col-7 text-center">Tasks</th>
+                    <th class="col-1">Completed</th>
+                    <th class="col-1">Extra file</th>
+                    <th class="col-1">Task Date </th>
+                    <th class="col-1" style="text-align: center;"> <mat-icon style="color: green;">edit</mat-icon></th>
+                    <th class="col-1" style="text-align: center;"><mat-icon style="color: red; text-align: center;">delete</mat-icon></th> 
+                </tr>   
+            </thead>
+            <tbody>
+                    @for (item of AllTasks; track $index) {
+                        @if(!item.completed){
+                            <tr>
+                                <td> {{item.title}} </td>
+                                <td style="text-align: center;"><mat-checkbox [(ngModel)]="item.completed" (change)="TaskCompleted(item , $event)"></mat-checkbox></td>
+                                <td style="text-align: center;"><i class="bi bi-eye-fill text-primary ico showIco" (click)="showFile(item)"></i><i class="bi bi-arrow-down-circle text-primary ico dowenloadIco" (click)="DowenloadTaskFile($index,item)"></i></td>
+                                <td> {{item.taskDate}}</td>
+                                <td style="text-align: center;"><button class="btn btn-primary" (click)="EditTask( $index, item.id)">Edit</button></td>
+                                <td style="text-align: center;"><button class="btn btn-danger" (click)="deleteTask($index , item.id)">Delete</button></td> 
+                            </tr>
+                        }
+                     }
+            </tbody>
+        </table>
+    </div>
+   </div>
+</div>
+

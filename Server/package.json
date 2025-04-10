@@ -1,0 +1,15 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "localServer",
+  "license": "ISC",
+  "author": "Islam Atef",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "dependencies": {
+    "json-server": "^1.0.0-beta.3"
+  }
+}

@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary p-3">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="home">To Do List</a>
+      <button 
+        class="navbar-toggler" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="ToDoList">Tasks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  routerLink="completedTasks">Completed Tasks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="TodayTasks">Today’s Tasks</a>
+          </li>
+        </ul>
+  
+        <div class="d-flex">
+          @if(SigneduserName){
+            
+            <div style="display: flex; flex-direction: column; justify-content: center;align-items: center; color: white; margin-right: 20px;">
+              <i class="bi bi-person-circle"></i>
+               {{SigneduserName}}
+            </div>
+          }
+          @else {
+            <button class="btn btn-outline-light me-2" routerLink="signIn">Sign In</button>
+          }
+          <button class="btn btn-outline-light me-2"  routerLink="register">Register</button>
+          <button class="btn btn-warning" routerLink="signIn" (click)="SignOut()">Sign Out</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Add this link in index.html to use Bootstrap -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  
+  <!-- And this script for Bootstrap functionality -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
+  

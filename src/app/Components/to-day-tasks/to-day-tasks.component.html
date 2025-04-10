@@ -1,0 +1,38 @@
+<div class="container mt-5">
+  <div class="row" *ngIf="AllTasks.length">
+      <div class="col-sm-11">
+          <table class="table table-striped">
+              <thead class="col-sm-12 table-dark">
+                  <tr>
+                      <th class="col-7 text-center">Today tasks </th>
+                      <th class="col-1">Completed</th>
+                      <th class="col-1">Extra file</th>
+                      <th class="col-1">Task Date </th>
+                      <th class="col-1" style="text-align: center;"> <mat-icon style="color: green;">edit</mat-icon></th>
+                      <th class="col-1" style="text-align: center;"><mat-icon style="color: red; text-align: center;">delete</mat-icon></th> 
+                  </tr>   
+              </thead>
+              <tbody>
+                      @for (item of AllTasks; track $index) {
+                        @if(idsodatTask($index)){
+                            <tr>
+                                <td> {{item.title}} </td>
+                                <td style="text-align: center;"><mat-checkbox [(ngModel)]="item.completed" (change)="TaskCompleted(item, $event)" ></mat-checkbox></td>
+                                <th> {{item.taskDate}}
+                                    <td style="text-align: center;"><i  class="bi bi-eye-fill text-primary ico showIco" (click)="showFile(item)"></i> <i class="bi bi-arrow-down-circle text-primary ico dowenloadIco" (click)="DowenloadTaskFile($index,item)"></i></td>
+                                <th style="text-align: center;"><button class="btn btn-primary" [disabled]="true">Edit</button></th>
+                                <th style="text-align: center;"><button class="btn btn-danger" (click)="DeleteCompletedTask(item,$index)">Delete</button></th> 
+                            </tr>
+                        }
+                          }
+              </tbody>
+          </table>
+      </div>
+     </div>
+  
+  
+  
+  </div> 
+
+
+

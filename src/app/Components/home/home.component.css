@@ -1,0 +1,35 @@
+.task:focus {
+    /* style="display: flex; align-items: center;border: 1px solid #646464; border-radius: 20px; padding: 3px;
+     */
+       box-shadow: none !important;
+      border-color: #ccc !important; 
+      outline: none !important;
+      border: none;
+  }
+  .task{
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 3px;
+  }
+
+
+  /* 
+  .container {
+    height: 100vh; 
+    scroll-snap-type: y mandatory; 
+    overflow-y: scroll; 
+    scroll-behavior: smooth; 
+  }  
+
+  .section {
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    scroll-snap-align: start; 
+  }   
+    
+  */

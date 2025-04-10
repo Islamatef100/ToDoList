@@ -1,0 +1,14 @@
+    <div class="row mb-3 mt-5">
+        <div class="col-sm-10">
+            <div  class="task">
+                <input type="text" class="form-control addTask" placeholder="New Task" [(ngModel)] = "newTaskTitle"  (keyup.enter)="addTask()" style="border:none;" >
+                <i class="bi bi-folder text-primary m-2  fs-5 ico" [class.text-warning]="fileSelected" (click)="taskFile.click()" style="border-right: 1px solid blue; padding-right: 10px;"></i>
+                <i class="bi bi-calendar2-date-fill text-primary m-2  fs-5 ico" [class.text-warning]="newTaskDate"  (click)="TaskTime.showPicker()" ></i>
+            </div>
+             <input type="date" class="d-none" #TaskTime [(ngModel)]="newTaskDate">
+             <input type="file" class="d-none" #taskFile  (change)="UploadTaskFile($event)">
+              
+        </div>
+        <div class="col-sm-2 mt-1">  
+            <button class="btn btn-primary" (click)="addTask()" [disabled]="ActiveAddTask()"> {{operationName}}</button>
+       </div>

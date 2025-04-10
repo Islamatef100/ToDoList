@@ -1,0 +1,26 @@
+.task:focus {
+    /* style="display: flex; align-items: center;border: 1px solid #646464; border-radius: 20px; padding: 3px;
+     */
+       box-shadow: none !important;
+      border-color: #ccc !important; 
+      outline: none !important;
+      border: none;
+  }
+  .task{
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 3px;
+  }
+  .ico:hover{
+    color: red;
+    cursor: pointer !important;
+  }
+  .addTask:focus{
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+  
